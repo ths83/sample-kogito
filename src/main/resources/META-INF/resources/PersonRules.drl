@@ -1,0 +1,13 @@
+package org.acme
+unit PersonRules;
+
+import org.acme.Person;
+
+rule isAdult
+	when
+		$person: Person(age > 18) from person
+	then
+    modify($person) {
+    	setAdult(true)
+    };
+end
